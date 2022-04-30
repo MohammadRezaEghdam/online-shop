@@ -1,13 +1,4 @@
 {
     "/js/app.js": "/js/app.js",
-    "/js/main.js": "/js/main.js",
-    "/css/app.css": "/css/app.css",
-    "/css/main.css": "/css/main.css",
-    "/images/77220-scalable-vector-graphics-logo-whatsapp-icon-thumb.png": "/images/77220-scalable-vector-graphics-logo-whatsapp-icon-thumb.png",
-    "/images/apostolos-vamvouras-Pp_nVOuJMTU-unsplash.jpg": "/images/apostolos-vamvouras-Pp_nVOuJMTU-unsplash.jpg",
-    "/images/david-sanchez-kXLR5vVw0B0-unsplash.jpg": "/images/david-sanchez-kXLR5vVw0B0-unsplash.jpg",
-    "/images/Instagram-Logo-PNG-Image-1.png": "/images/Instagram-Logo-PNG-Image-1.png",
-    "/images/vadim-sherbakov-tCICLJ5ktBE-unsplash.jpg": "/images/vadim-sherbakov-tCICLJ5ktBE-unsplash.jpg",
-    "/images/windows-lhDjusLtpP4-unsplash.jpg": "/images/windows-lhDjusLtpP4-unsplash.jpg",
-    "/icon/youtube.ico": "/icon/youtube.ico"
+    "/css/app.css": "/css/app.css"
 }
