@@ -1,0 +1,67 @@
+.site-header {
+    height: 50px;
+    background-color: #4C4C4C;
+    color: aliceblue;
+    
+}
+
+.site-header-content a,
+svg {
+    color: aliceblue;
+    margin-left: 5px;
+    margin-top: 15px;
+
+}
+
+.new-products img {
+    height: 200px;
+    width: 200px;
+}
+
+.hr-underline {
+    width: 400px;
+    border-top: 1px solid #4C4C4C;
+}
+
+.hr-braker {
+    border-top: 1px solid white;
+}
+
+.footer {
+    height: 300px;
+    background-color: #4C4C4C;
+    margin-top: 30px;
+}
+
+.social-media {
+    height: 40px;
+    width: 40px;
+
+}
+
+.social-media-hub {
+    text-align: center;
+}
+
+.divider {
+    border-left: 1px solid #4C4C4C;
+    border-right: 1px solid #4C4C4C;
+}
+
+.reserved {
+    color: aliceblue;
+    padding-top: 10px;
+}
+
+.card img {
+    height: 300px;
+    object-fit: cover;
+}
+
+#custom-list {
+    background-color: #4C4C4C;
+    border: 1px solid #4C4C4C;
+    font-size: large;
+}
+
+

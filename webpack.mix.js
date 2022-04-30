@@ -15,3 +15,20 @@ mix.js('resources/js/app.js', 'public/js')
     .postCss('resources/css/app.css', 'public/css', [
         //
     ]);
+
+mix.styles([
+    'resources/Styles/css/bootstrap.css',
+    'resources/Styles/css/custom.css'
+], 'public/css/main.css');
+
+mix.js([
+    'resources/js/Jquery.js'
+], 'public/js/main.js')
+
+mix.copyDirectory([
+    'resources/Styles/images',
+], 'public/images')
+
+mix.copyDirectory([
+    'resources/Styles/icon',
+], 'public/icon')
