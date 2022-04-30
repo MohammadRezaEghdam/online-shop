@@ -13,4 +13,9 @@ class IndexController extends Controller
     {
         return view('index');
     }
+
+    public function blog()
+    {
+        return view('blog');
+    }
 }
