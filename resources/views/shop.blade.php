@@ -1,64 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop</title>
-    <link rel="stylesheet" href="Styles/css/bootstrap.css">
-    <link rel="stylesheet" href="Styles/css/custom.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
-        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-</head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
-<script src="JS/bootstrap.bundle.js"></script>
-</head>
-
-<body>
+@extends('layout')
+@section('content')
     <!-- navigation bar -->
-    <div class="container-fluid pl-0 pr-0 mb-3">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="index.html">Navbar scroll</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarScroll"
-                aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarScroll">
-                <ul class="navbar-nav mr-auto my-2 my-lg-0 navbar-nav-scroll" style="max-height: 100px;">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="blog.html">Blog</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
-                            data-toggle="dropdown" aria-expanded="false">
-                            User
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                            <li><a class="dropdown-item" href="panel.html">Panel</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link " href="shop.html">Shop</a>
-                    </li>
-                </ul>
-                <form class="d-flex">
-                    <input class="form-control mr-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-            </div>
-        </nav>
-    </div>
+    
     <!-- slide bar -->
     <div class="container-fluid">
         <div class="col-md-12">
@@ -74,15 +17,15 @@
                 <!-- The slideshow -->
                 <div class="carousel-inner">
                     <div class="carousel-item active ">
-                        <img src="Styles/images/headerImage/6d74a333d06fd714df646368fc010b6d1108de58_1648996572.jpg"
+                        <img src="{{asset('images')}}/headerImage/6d74a333d06fd714df646368fc010b6d1108de58_1648996572.jpg"
                             alt="Los Angeles">
                     </div>
                     <div class="carousel-item">
-                        <img src="Styles/images/headerImage/b3cc15a5d42b31b2bb8e02aa76318631cd5ed900_1649665010.jpg"
+                        <img src="{{asset('images')}}/headerImage/b3cc15a5d42b31b2bb8e02aa76318631cd5ed900_1649665010.jpg"
                             alt="Chicago">
                     </div>
                     <div class="carousel-item">
-                        <img src="Styles/images/headerImage/fce92fcebd433bab0b34558e6edccc02c564990a_1649740591.jpg"
+                        <img src="{{asset('images')}}/headerImage/fce92fcebd433bab0b34558e6edccc02c564990a_1649740591.jpg"
                             alt="New York">
                     </div>
                 </div>
@@ -112,7 +55,7 @@
 
                     <div class="card">
                         <img class="card-img-top"
-                            src="Styles/images/productsImage/alexander-rotker-l8p1aWZqHvE-unsplash.jpg" alt="Card image"
+                            src="{{asset('images')}}/productsImage/alexander-rotker-l8p1aWZqHvE-unsplash.jpg" alt="Card image"
                             style="width:100%">
                         <div class="card-body">
                             <h4 class="card-title">John Doe</h4>
@@ -128,13 +71,14 @@
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <button type="button" class="close" data-dismiss="modal"
+                                                aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
                                         </div>
                                         <div class="modal-body">
                                             <div class="text-center">
-                                                <img src="Styles/images/productsImage/alexander-rotker-l8p1aWZqHvE-unsplash.jpg"
+                                                <img src="{{asset('images')}}/productsImage/alexander-rotker-l8p1aWZqHvE-unsplash.jpg"
                                                     alt="">
 
                                             </div>
@@ -161,7 +105,7 @@
                     </div>
 
                     <div class="card">
-                        <img class="card-img-top" src="Styles/images/productsImage/c-d-x-PDX_a_82obo-unsplash.jpg"
+                        <img class="card-img-top" src="{{asset('images')}}/productsImage/c-d-x-PDX_a_82obo-unsplash.jpg"
                             alt="Card image" style="width:100%">
                         <div class="card-body">
                             <h4 class="card-title">John Doe</h4>
@@ -173,7 +117,7 @@
                     </div>
                     <div class="card">
                         <img class="card-img-top"
-                            src="Styles/images/productsImage/charisse-kenion-dah-jZWgzx8-unsplash.jpg" alt="Card image"
+                            src="{{asset('images')}}/productsImage/charisse-kenion-dah-jZWgzx8-unsplash.jpg" alt="Card image"
                             style="width:100%">
                         <div class="card-body">
                             <h4 class="card-title">John Doe</h4>
@@ -184,7 +128,7 @@
                         </div>
                     </div>
                     <div class="card">
-                        <img class="card-img-top" src="Styles/images/productsImage/icons8-team-7LNatQYMzm4-unsplash.jpg"
+                        <img class="card-img-top" src="{{asset('images')}}/productsImage/icons8-team-7LNatQYMzm4-unsplash.jpg"
                             alt="Card image" style="width:100%">
                         <div class="card-body">
                             <h4 class="card-title">John Doe</h4>
@@ -196,7 +140,7 @@
                     </div>
                     <div class="card">
                         <img class="card-img-top"
-                            src="Styles/images/productsImage/mohammed-attia-wYVKRBIchV0-unsplash.jpg" alt="Card image"
+                            src="{{asset('images')}}/productsImage/mohammed-attia-wYVKRBIchV0-unsplash.jpg" alt="Card image"
                             style="width:100%">
                         <div class="card-body">
                             <h4 class="card-title">John Doe</h4>
@@ -208,7 +152,7 @@
                         </div>
                     </div>
                     <div class="card">
-                        <img class="card-img-top" src="Styles/images/productsImage/pmv-chamara-MEsWk-dZzlI-unsplash.jpg"
+                        <img class="card-img-top" src="{{asset('images')}}/productsImage/pmv-chamara-MEsWk-dZzlI-unsplash.jpg"
                             alt="Card image" style="width:100%">
                         <div class="card-body">
                             <h4 class="card-title">John Doe</h4>
@@ -220,7 +164,7 @@
                         </div>
                     </div>
                     <div class="card">
-                        <img class="card-img-top" src="Styles/images/productsImage/rachit-tank-2cFZ_FB08UM-unsplash.jpg"
+                        <img class="card-img-top" src="{{asset('images')}}/productsImage/rachit-tank-2cFZ_FB08UM-unsplash.jpg"
                             alt="Card image" style="width:100%">
                         <div class="card-body">
                             <h4 class="card-title">John Doe</h4>
@@ -232,7 +176,7 @@
                         </div>
                     </div>
                     <div class="card">
-                        <img class="card-img-top" src="Styles/images/productsImage/revolt-164_6wVEHfI-unsplash.jpg"
+                        <img class="card-img-top" src="{{asset('images')}}/productsImage/revolt-164_6wVEHfI-unsplash.jpg"
                             alt="Card image" style="width:100%">
                         <div class="card-body">
                             <h4 class="card-title">John Doe</h4>
@@ -245,7 +189,7 @@
                     </div>
                     <div class="card">
                         <img class="card-img-top"
-                            src="Styles/images/productsImage/shardar-tarikul-islam-tIQ2t64FKy8-unsplash.jpg"
+                            src="{{asset('images')}}/productsImage/shardar-tarikul-islam-tIQ2t64FKy8-unsplash.jpg"
                             alt="Card image" style="width:100%">
                         <div class="card-body">
                             <h4 class="card-title">John Doe</h4>
@@ -275,94 +219,11 @@
                         ادکلان</a>
                     <a class="list-group-item list-group-item-action " href="#" tabindex="-1"
                         aria-disabled="true">جواهرات</a>
-                    <a class="list-group-item list-group-item-action " href="#" tabindex="-1"
-                        aria-disabled="true">ساعت</a>
+                    <a class="list-group-item list-group-item-action " href="#" tabindex="-1" aria-disabled="true">ساعت</a>
                 </ul>
             </div>
         </div>
     </div>
 
-    <!-- footer -->
-    <footer class="bg-dark text-center text-white mt-3 mr-0">
-        <!-- Grid container -->
-        <div class="container pt-2">
-            <!-- Section: Social media -->
-            <section class="mb-4">
-                <!-- Facebook -->
-                <a class="btn btn-success btn-floating m-1" style="background-color: #3b5998;" href="#!"
-                    role="button"><i class="fab fa-facebook-f"></i></a>
-
-                <!-- Twitter -->
-                <a class="btn btn-success btn-floating m-1" style="background-color: #55acee;" href="#!"
-                    role="button"><i class="fab fa-twitter"></i></a>
-
-                <!-- Google -->
-                <a class="btn btn-success btn-floating m-1" style="background-color: #dd4b39;" href="#!"
-                    role="button"><i class="fab fa-google"></i></a>
-
-                <!-- Instagram -->
-                <a class="btn btn-success btn-floating m-1" style="background-color: #ac2bac;" href="#!"
-                    role="button"><i class="fab fa-instagram"></i></a>
-
-                <!-- Linkedin -->
-                <a class="btn btn-success btn-floating m-1" style="background-color: #0082ca;" href="#!"
-                    role="button"><i class="fab fa-linkedin-in"></i></a>
-                <!-- Github -->
-                <a class="btn btn-success btn-floating m-1" style="background-color: #333333;" href="#!"
-                    role="button"><i class="fab fa-github"></i></a>
-            </section>
-            <!-- Section: Social media -->
-        </div>
-        <!-- Section: Social media -->
-
-        <!-- Section: Form -->
-        <section class="">
-            <form action="">
-                <!--Grid row-->
-                <div class="row d-flex justify-content-center">
-                    <!--Grid column-->
-                    <div class="col-auto">
-                        <p class="pt-2">
-                            <strong>Sign up for our newsletter</strong>
-                        </p>
-                    </div>
-                    <!--Grid column-->
-
-                    <!--Grid column-->
-                    <div class="col-md-5 col-12">
-                        <!-- Email input -->
-                        <div class="form-outline form-white mb-4">
-                            <input type="email" id="form5Example21" class="form-control" />
-                            <label class="form-label" for="form5Example21">Email address</label>
-                        </div>
-                    </div>
-                    <!--Grid column-->
-
-                    <!--Grid column-->
-                    <div class="col-auto">
-                        <!-- Submit button -->
-                        <button type="submit" class="btn btn-outline-light mb-4">
-                            Subscribe
-                        </button>
-                    </div>
-                    <!--Grid column-->
-                </div>
-                <!--Grid row-->
-            </form>
-        </section>
-        <!-- Section: Form -->
-
-
-        </div>
-        <!-- Grid container -->
-
-        <!-- Copyright -->
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-            © 2022 Copyright:
-            <a class="text-white" href="">Mohammad Reza Eghdam</a>
-        </div>
-        <!-- Copyright -->
-    </footer>
-</body>
-
-</html>
+    
+@endsection

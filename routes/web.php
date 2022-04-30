@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\IndexController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,3 +23,8 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
+
+Route::get('/', [IndexController::class, 'index'])->name('index');
+Route::get('/blog', [IndexController::class, 'blog'])->name('blog');
+Route::get('/panel', [IndexController::class, 'panel'])->name('panel');
+Route::get('/shop', [IndexController::class, 'shop'])->name('shop');

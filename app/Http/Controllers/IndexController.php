@@ -14,8 +14,18 @@ class IndexController extends Controller
         return view('index');
     }
 
+    public function shop()
+    {
+        return view('shop');
+    }
+
     public function blog()
     {
         return view('blog');
+    }
+
+    public function panel()
+    {
+        return view('panel');
     }
 }
