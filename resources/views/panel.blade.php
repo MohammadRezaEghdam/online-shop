@@ -14,6 +14,11 @@
                                 </script>
                             @endif
                             {{ auth()->user()->name ?? '' }}
+                            @if (auth()->user()->is_admin == 1)
+                                {{'(Admin)'}}
+                            @else
+                                {{ 'Subscriber' }}
+                            @endif
                         </a>
                         <a class="list-group-item list-group-item-action " href="#">Text</a>
                         <a class="list-group-item list-group-item-action " href="#" tabindex="-1"> item</a>
