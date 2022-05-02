@@ -14,7 +14,7 @@ class AddIsAdminToUserTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            //
+            $table->integer('is_admin')->after('name');
         });
     }
 
@@ -26,7 +26,7 @@ class AddIsAdminToUserTable extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            //
+            $table->dropColumn('is_admin');
         });
     }
 }
