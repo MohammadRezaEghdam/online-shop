@@ -1,6 +1,5 @@
 @extends('layout')
 @section('content')
-   
     <!-- ? panel -->
     <div class="container-fluid">
         <div class="row mt-3">
@@ -9,7 +8,12 @@
                 <div id="openAndClosePanel">
                     <ul class="list-group">
                         <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
-                            Header
+                            @if (!Auth::check())
+                                <script>
+                                    window.location = "/";
+                                </script>
+                            @endif
+                            {{ auth()->user()->name ?? '' }}
                         </a>
                         <a class="list-group-item list-group-item-action " href="#">Text</a>
                         <a class="list-group-item list-group-item-action " href="#" tabindex="-1"> item</a>
@@ -39,7 +43,7 @@
                         </div>
                         <div class="col-md-4">
                             <div class="card">
-                                
+
                                 <div class="card-body">
                                     <h5 class="card-title">Posts</h5>
                                     <p class="card-text">Some quick example text to build on the card title and make up
@@ -50,7 +54,7 @@
                         </div>
                         <div class="col-md-4">
                             <div class="card">
-                                
+
                                 <div class="card-body">
                                     <h5 class="card-title">Products</h5>
                                     <p class="card-text">Some quick example text to build on the card title and make up
@@ -126,5 +130,5 @@
                 </div>
             </div>
         </div>
-    </div> 
+    </div>
 @endsection
