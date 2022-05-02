@@ -15,7 +15,7 @@
                             @endif
                             {{ auth()->user()->name ?? '' }}
                             @if (auth()->user()->is_admin == 1)
-                                {{'(Admin)'}}
+                            <span class="badge badge-warning">Admin</span>
                             @else
                                 {{ 'Subscriber' }}
                             @endif
@@ -71,67 +71,63 @@
                     </div>
                 </div>
                 <div class="col">
-                    <table class="table mt-3">
-                        <thead class="thead-dark">
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">First</th>
-                                <th scope="col">Last</th>
-                                <th scope="col">Handle</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Larry</td>
-                                <td>the Bird</td>
-                                <td>@twitter</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    @if (auth()->user()->is_admin == 1)
+                        <table class="table mt-3">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">First</th>
+                                    <th scope="col">Last</th>
+                                    <th scope="col">Handle</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($users as $user)
+                                    <tr>
+                                        <th scope="row">{{ $user->id }}</th>
+                                        <td>{{ $user->name }}</td>
+                                        <td>{{ $user->email }}</td>
+                                        <td>
+                                            @if ($user->is_admin == 1)
+                                                <span class="badge badge-warning">Admin</span>
+                                            @else
+                                                <span class="badge badge-light">Subscriber</span>
+                                            @endif
+                                        </td>
+                                    </tr>
+                                @endforeach
 
-                    <table class="table">
-                        <thead class="thead-light">
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">First</th>
-                                <th scope="col">Last</th>
-                                <th scope="col">Handle</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Larry</td>
-                                <td>the Bird</td>
-                                <td>@twitter</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                            </tbody>
+                        </table>
+                    @else
+                        <div class="border border-primary mt-5 p-5">
+                            <h4>Role & Terms</h4>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                labore et dolore magna aliqua. Etiam erat velit scelerisque in. Imperdiet sed euismod nisi
+                                porta lorem mollis aliquam ut porttitor. Faucibus in ornare quam viverra orci sagittis eu
+                                volutpat. Vitae justo eget magna fermentum. Ultrices gravida dictum fusce ut placerat.
+                                Viverra mauris in aliquam sem. Est pellentesque elit ullamcorper dignissim cras. Morbi
+                                tristique senectus et netus et malesuada fames ac. Et leo duis ut diam quam nulla porttitor
+                                massa. Phasellus vestibulum lorem sed risus ultricies tristique. Lacus vestibulum sed arcu
+                                non odio euismod lacinia at quis.
+                            </p>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                labore et dolore magna aliqua. Etiam erat velit scelerisque in. Imperdiet sed euismod nisi
+                                porta lorem mollis aliquam ut porttitor. Faucibus in ornare quam viverra orci sagittis eu
+                                volutpat. Vitae justo eget magna fermentum. Ultrices gravida dictum fusce ut placerat.
+                                Viverra mauris in aliquam sem. Est pellentesque elit ullamcorper dignissim cras. Morbi
+                                tristique senectus et netus et malesuada fames ac. Et leo duis ut diam quam nulla porttitor
+                                massa. Phasellus vestibulum lorem sed risus ultricies tristique. Lacus vestibulum sed arcu
+                                non odio euismod lacinia at quis.
+                            </p>
+                            <a href="{{route('index')}}" class="btn btn-success float-right m-1" type="button">Agree</a>
+                            <a href="{{route('logout')}}" class="btn btn-danger float-right m-1" type="button">Disagree</a>
+                        </div>
+                    @endif
+
+
                 </div>
             </div>
         </div>

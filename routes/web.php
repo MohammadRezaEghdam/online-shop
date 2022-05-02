@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\PanelController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,5 +27,5 @@ require __DIR__.'/auth.php';
 
 Route::get('/', [IndexController::class, 'index'])->name('index');
 Route::get('/blog', [IndexController::class, 'blog'])->name('blog');
-Route::get('/panel', [IndexController::class, 'panel'])->name('panel');
+Route::get('/panel', [PanelController::class, 'index'])->name('panel');
 Route::get('/shop', [IndexController::class, 'shop'])->name('shop');
