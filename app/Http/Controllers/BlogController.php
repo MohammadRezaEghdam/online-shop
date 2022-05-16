@@ -16,7 +16,7 @@ class BlogController extends Controller
     public function index()
     {   
         $showAllBlogs = Blog::all();
-        return view('blog', compact('showAllBlogs'));
+        return view('blogs.index', compact('showAllBlogs'));
     }
 
     /**
@@ -26,7 +26,7 @@ class BlogController extends Controller
      */
     public function create()
     {
-        //
+        return view('blogs.create');
     }
 
     /**
@@ -37,7 +37,9 @@ class BlogController extends Controller
      */
     public function store(StoreBlogRequest $request)
     {
-        //
+        Blog::create($request->all());
+
+        return redirect()->route('blog')->with('alert','User Created!');
     }
 
     /**

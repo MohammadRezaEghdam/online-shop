@@ -41,42 +41,20 @@
 
             <!-- * main news panel -->
             <div class="col-md-8">
+                @foreach ($showAllBlogs as $blog)
+                    
                 <div class="card border-secondary mb-3">
-                    <div class="card-header">Header</div>
+                    <div class="card-header">{{$blog->title}}</div>
                     <div class="card-body text-secondary">
                         <div class="text-center">
-                            <img src="{{asset('images')}}/productsImage/alexander-rotker-l8p1aWZqHvE-unsplash.jpg" alt="">
+                            <img src="{{$blog->image}}" alt="">
                         </div>
-                        <h5 class="card-title">Secondary Panel title</h5>
-                        <p class="card-text">Some quick example text to build on the panel title and make up the bulk
-                            of
-                            the panel's content.</p>
+                        <p class="card-text">{{$blog->description}}</p>
                     </div>
                 </div>
-                <div class="card border-secondary mb-3">
-                    <div class="card-header">Header</div>
-                    <div class="card-body text-secondary">
-                        <div class="text-center">
-                            <img src="{{asset('images')}}/productsImage/c-d-x-PDX_a_82obo-unsplash.jpg" alt="">
-                        </div>
-                        <h5 class="card-title">Secondary Panel title</h5>
-                        <p class="card-text">Some quick example text to build on the panel title and make up the bulk
-                            of
-                            the panel's content.</p>
-                    </div>
-                </div>
-                <div class="card border-secondary mb-3">
-                    <div class="card-header">Header</div>
-                    <div class="card-body text-secondary">
-                        <div class="text-center">
-                            <img src="{{asset('images')}}/productsImage/icons8-team-7LNatQYMzm4-unsplash.jpg" alt="">
-                        </div>
-                        <h5 class="card-title">Secondary Panel title</h5>
-                        <p class="card-text">Some quick example text to build on the panel title and make up the bulk
-                            of
-                            the panel's content.</p>
-                    </div>
-                </div>
+                @endforeach
+
+                
             </div>
 
             <!-- * right sidebar -->

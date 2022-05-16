@@ -17,7 +17,7 @@ class BlogFactory extends Factory
             'title' => $this->faker->name(),
             'slug' => $this->faker->slug(),
             'image' => 'https://loremflickr.com/320/240?random=' . rand(1,99),
-            'description' => $this->faker->paragraph(),
+            'description' => $this->faker->realText(),
         ];
     }
 }

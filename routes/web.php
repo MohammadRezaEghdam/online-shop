@@ -16,10 +16,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
@@ -27,6 +23,10 @@ Route::get('/dashboard', function () {
 require __DIR__.'/auth.php';
 
 Route::get('/', [IndexController::class, 'index'])->name('index');
-Route::get('/showBlogs', [BlogController::class, 'index'])->name('blog');
 Route::get('/panel', [PanelController::class, 'index'])->name('panel');
 Route::get('/shop', [IndexController::class, 'shop'])->name('shop');
+
+// * Blog Route
+Route::get('/blogs', [BlogController::class, 'index'])->name('blog');
+Route::get('/blogs/create', [BlogController::class, 'create'])->name('blog.create');
+Route::post('/blogs', [BlogController::class, 'store'])->name('blog.store');
