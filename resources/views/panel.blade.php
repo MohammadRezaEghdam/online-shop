@@ -15,9 +15,9 @@
                             @endif
                             {{ auth()->user()->name ?? '' }}
                             @if (auth()->user()->is_admin == 1)
-                            <span class="badge badge-warning">Admin</span>
+                                <span class="badge badge-warning">Admin</span>
                             @else
-                                {{ 'Subscriber' }}
+                                <span class="badge badge-secondary">Subscriber</span>
                             @endif
                         </a>
                         <a class="list-group-item list-group-item-action " href="#">Text</a>
@@ -122,8 +122,9 @@
                                 massa. Phasellus vestibulum lorem sed risus ultricies tristique. Lacus vestibulum sed arcu
                                 non odio euismod lacinia at quis.
                             </p>
-                            <a href="{{route('index')}}" class="btn btn-success float-right m-1" type="button">Agree</a>
-                            <a href="{{route('logout')}}" class="btn btn-danger float-right m-1" type="button">Disagree</a>
+                            <a href="{{ route('index') }}" class="btn btn-success float-right m-1" type="button">Agree</a>
+                            <a href="{{ route('logout') }}" class="btn btn-danger float-right m-1"
+                                type="button">Disagree</a>
                         </div>
                     @endif
 

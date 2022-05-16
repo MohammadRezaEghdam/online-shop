@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\PanelController;
 use Illuminate\Support\Facades\Route;
@@ -26,6 +27,6 @@ Route::get('/dashboard', function () {
 require __DIR__.'/auth.php';
 
 Route::get('/', [IndexController::class, 'index'])->name('index');
-Route::get('/blog', [IndexController::class, 'blog'])->name('blog');
+Route::get('/showBlogs', [BlogController::class, 'index'])->name('blog');
 Route::get('/panel', [PanelController::class, 'index'])->name('panel');
 Route::get('/shop', [IndexController::class, 'shop'])->name('shop');
