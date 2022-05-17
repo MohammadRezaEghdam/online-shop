@@ -4,6 +4,15 @@
 
     <!-- * left sidebar -->
     <div class="container-fluid">
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <div class="row">
             <div class="col-md-2">
                 <div class="list-group text-center">
@@ -50,6 +59,7 @@
                             <img src="{{$blog->image}}" alt="">
                         </div>
                         <p class="card-text">{{$blog->description}}</p>
+                        <a href="{{route('blog.show', $blog->slug)}}" class="btn btn-info">Read more..</a>
                     </div>
                 </div>
                 @endforeach

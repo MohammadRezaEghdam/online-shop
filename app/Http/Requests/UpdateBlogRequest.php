@@ -3,8 +3,10 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
+use phpDocumentor\Reflection\Types\Parent_;
 
-class UpdateBlogRequest extends FormRequest
+class UpdateBlogRequest extends StoreBlogRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +15,7 @@ class UpdateBlogRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,8 +25,8 @@ class UpdateBlogRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            //
-        ];
+        return array_merge(parent::rules(), [
+            'slug' => ['required', Rule::unique('blogs')->ignore($this->blog)]
+        ]);
     }
 }

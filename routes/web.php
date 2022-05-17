@@ -30,3 +30,7 @@ Route::get('/shop', [IndexController::class, 'shop'])->name('shop');
 Route::get('/blogs', [BlogController::class, 'index'])->name('blog');
 Route::get('/blogs/create', [BlogController::class, 'create'])->name('blog.create');
 Route::post('/blogs', [BlogController::class, 'store'])->name('blog.store');
+Route::get('/blogs/{blog:slug}', [BlogController::class, 'show'])->name('blog.show');
+Route::get('/blogs/{blog:slug}/edit', [BlogController::class, 'edit'])->name('blog.edit');
+Route::post('/blogs/{blog:slug}', [BlogController::class, 'update'])->name('blog.update');
+Route::delete('/blogs/{blog:slug}', [BlogController::class, 'destroy'])->name('blog.destroy');
