@@ -2,6 +2,15 @@
 @section('content')
     <div class="container">
         <h4 class="text-center mb-5">Create New Blog</h4>
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <form method="POST" action="{{ route('blog.store') }}">
             @csrf
             <!-- 2 column grid layout with text inputs for the first and last names -->
